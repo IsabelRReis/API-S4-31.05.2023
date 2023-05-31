@@ -287,23 +287,6 @@ app.post("/registrarAcaoUsuarioEmail/:id", (req, res) => {
     })
 })
 
-//nome, usuario e email
-app.put("/editar-info-nome-usuario-email/:id", (req, res) => {
-    const id = req.params.id
-    const { nome } = req.body
-    const { username } = req.body
-    const { useremail } = req.body
-
-    let SQL = ("UPDATE Usuarios SET usuario_nome = '"+nome+"', , usuario_email = '"+useremail+"' WHERE usuario_ID = '"+id+"'" )
-
-    DB.query(SQL, (err, result) => {
-        if (err) {
-            console.log(err)
-        } else {
-            res.send({msg: "Editado com sucesso."})
-        }
-    })
-})
 app.post("/registrarAcaoNomeUsuarioEmail/:id", (req, res) => {
     const id = req.params.id
 
